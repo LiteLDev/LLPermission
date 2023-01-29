@@ -1,4 +1,5 @@
 #pragma once
+
 #include <llapi/LoggerAPI.h>
 #include <llapi/I18nAPI.h>
 #include "Data.h"
@@ -6,15 +7,17 @@
 
 class Permission;
 
-class Mod {
-    
+class LLPermission {
+
 public:
 
     Logger logger;
     Permission perm;
 
-    Mod();
+    LLPermission();
+
     void entry();
 
 };
-extern Mod mod;
+
+extern LLPermission mod;

@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include "Mod.h"
+#include "LLPermission.h"
 
 BOOL APIENTRY DllMain(HMODULE hModule,
                       DWORD ul_reason_for_call,
@@ -7,7 +7,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
     switch (ul_reason_for_call) {
         case DLL_PROCESS_ATTACH:
             ll::registerPlugin("PermissionAPI",
-                               "Builtin & Powerful permission API for LiteLoaderBDS",
+                               "Powerful permission API for LiteLoader",
                                PERM_VER,
                                std::map<std::string, std::string>{
                                    {"Author", "Jasonzyt(LiteLDev)"},

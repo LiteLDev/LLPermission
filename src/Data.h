@@ -1,7 +1,7 @@
 #pragma once
 #include <llapi/Global.h>
 #include <Nlohmann/json.hpp>
-#include "Data/Role.hpp"
+#include <llapi/perm/Role.hpp>
 
 class Permission {
 
@@ -9,8 +9,8 @@ class Permission {
 
 public:
 
-    PERM::Roles roles;
-    PERM::PermInfoList permInfoList;
+    ll::perm::Roles roles;
+    ll::perm::PermInfoList permInfoList;
     static nlohmann::json defaultData;
 
     /**
@@ -31,11 +31,11 @@ public:
      * @param  diaplayName  The display name of the role.
      * @return std::shared_ptr<Role>  The shared pointer to the role.
      */
-    std::shared_ptr<PERM::Role> createRole(const std::string& name, const std::string& displayName);
+    std::shared_ptr<ll::perm::Role> createRole(const std::string& name, const std::string& displayName);
 
-    std::shared_ptr<PERM::Role> getRole(const std::string& name);
+    std::shared_ptr<ll::perm::Role> getRole(const std::string& name);
 
-    std::shared_ptr<PERM::Role> getOrCreateRole(const std::string& name);
+    std::shared_ptr<ll::perm::Role> getOrCreateRole(const std::string& name);
 
     void deleteRole(const std::string& name);
     
@@ -68,8 +68,8 @@ public:
      */
     bool isMemberOf(const xuid_t& xuid, const std::string& name) const;
 
-    PERM::Roles getPlayerRoles(const xuid_t& xuid) const;
+    ll::perm::Roles getPlayerRoles(const xuid_t& xuid) const;
 
-    PERM::Permissions getPlayerPermissions(const xuid_t& xuid) const;
+    ll::perm::Permissions getPlayerPermissions(const xuid_t& xuid) const;
 
 };

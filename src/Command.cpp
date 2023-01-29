@@ -2,10 +2,12 @@
 #include <llapi/RegCommandAPI.h>
 #include <llapi/EventAPI.h>
 #include <llapi/PlayerInfoAPI.h>
-#include "Mod.h"
+#include "LLPermission.h"
+#include <llapi/perm/Permission.hpp>
+#include <llapi/perm/Role.hpp>
 
 using namespace RegisterCommandHelper;
-using namespace PERM;
+using namespace ll::perm;
 using fmt::arg;
 
 /*

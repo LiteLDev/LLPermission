@@ -1,9 +1,9 @@
 #include "pch.h"
-#include <llapi/Utils/FileHelper.h>
-#include "Data/JsonHelper.hpp"
-#include "Mod.h"
+#include <llapi/utils/FileHelper.h>
+#include "JsonHelper.hpp"
+#include "LLPermission.h"
 
-void PERM::Role::setPermission(const std::string& name, bool enabled, const nlohmann::json& extra) {
+void ll::perm::Role::setPermission(const std::string& name, bool enabled, const nlohmann::json& extra) {
     if (!mod.perm.permInfoList.contains(name)) {
         throw std::invalid_argument("Permission " + name + " is not registered!");
     }
@@ -21,7 +21,7 @@ void PERM::Role::setPermission(const std::string& name, bool enabled, const nloh
     }
 }
 
-using namespace PERM;
+using namespace ll::perm;
 
 nlohmann::json Permission::defaultData = {
     {"permissions", nlohmann::json::object()},
